@@ -1,16 +1,5 @@
 import { cn } from "../utils";
-import type { CheckboxProps, CheckboxSize, CheckboxVariant } from "./types";
-
-const checkboxSizes: Record<CheckboxSize, string> = {
-  sm: "size-4",
-  md: "size-5",
-  lg: "size-6",
-};
-
-const checkboxVariants: Record<CheckboxVariant, string> = {
-  brand: "accent-brand",
-  neutral: "accent-muted-foreground",
-};
+import type { CheckboxProps } from "./types";
 
 export function Checkbox({
   className,
@@ -40,12 +29,10 @@ export function Checkbox({
       disabled={disabled}
       aria-describedby={describedBy}
       aria-invalid={invalid || undefined}
-      className={cn(
-        "mt-0.5 shrink-0 rounded border border-border bg-input transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 disabled:cursor-not-allowed disabled:opacity-60 aria-[invalid=true]:ring-danger/30",
-        checkboxSizes[size],
-        checkboxVariants[variant],
-        className,
-      )}
+      className={cn("ui-checkbox", className)}
+      data-invalid={invalid || undefined}
+      data-size={size}
+      data-variant={variant}
       {...props}
     />
   );
@@ -56,24 +43,22 @@ export function Checkbox({
 
   return (
     <label
-      className={cn(
-        "flex max-w-full items-start gap-3 text-sm text-foreground",
-        disabled ? "cursor-not-allowed opacity-60" : "cursor-pointer",
-      )}
+      className="ui-checkbox-field"
+      data-disabled={disabled || undefined}
     >
       {control}
-      <span className="grid gap-1">
-        {label ? <span className="font-medium leading-5">{label}</span> : null}
+      <span className="ui-checkbox-content">
+        {label ? <span className="ui-checkbox-label">{label}</span> : null}
         {description ? (
           <span
             id={descriptionId}
-            className="text-sm leading-5 text-muted-foreground"
+            className="ui-checkbox-description"
           >
             {description}
           </span>
         ) : null}
         {error ? (
-          <span id={errorId} className="text-sm leading-5 text-danger">
+          <span id={errorId} className="ui-checkbox-error">
             {error}
           </span>
         ) : null}

@@ -1,0 +1,53 @@
+@layer components {
+  .ui-checkbox {
+    @apply mt-0.5 shrink-0 rounded border border-border bg-input transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .ui-checkbox[data-invalid="true"] {
+    @apply ring-danger/30;
+  }
+
+  .ui-checkbox[data-variant="brand"] {
+    @apply accent-brand;
+  }
+
+  .ui-checkbox[data-variant="neutral"] {
+    @apply accent-muted-foreground;
+  }
+
+  .ui-checkbox[data-size="sm"] {
+    @apply size-4;
+  }
+
+  .ui-checkbox[data-size="md"] {
+    @apply size-5;
+  }
+
+  .ui-checkbox[data-size="lg"] {
+    @apply size-6;
+  }
+
+  .ui-checkbox-field {
+    @apply flex max-w-full cursor-pointer items-start gap-3 text-sm text-foreground;
+  }
+
+  .ui-checkbox-field[data-disabled="true"] {
+    @apply cursor-not-allowed opacity-60;
+  }
+
+  .ui-checkbox-content {
+    @apply grid gap-1;
+  }
+
+  .ui-checkbox-label {
+    @apply font-medium leading-5;
+  }
+
+  .ui-checkbox-description {
+    @apply text-sm leading-5 text-muted-foreground;
+  }
+
+  .ui-checkbox-error {
+    @apply text-sm leading-5 text-danger;
+  }
+}

@@ -12,16 +12,19 @@ const uiEntries = {
   ),
   radio: resolve(__dirname, "components/ui/radio/index.ts"),
   select: resolve(__dirname, "components/ui/select/index.ts"),
+  styles: resolve(__dirname, "components/ui/styles.css"),
 };
 
 export default defineConfig({
   publicDir: false,
   build: {
+    cssCodeSplit: true,
     emptyOutDir: true,
     lib: {
+      cssFileName: "styles",
       entry: uiEntries,
       fileName: (_format, entryName) => `${entryName}.mjs`,
-
+      formats: ["es"],
     },
     minify: false,
     outDir: "dist",

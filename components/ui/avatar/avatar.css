@@ -1,0 +1,37 @@
+@layer components {
+  .ui-avatar {
+    @apply inline-flex shrink-0 items-center justify-center overflow-hidden bg-muted font-semibold text-muted-foreground ring-1 ring-border;
+  }
+
+  .ui-avatar[data-shape="circle"] {
+    @apply rounded-full;
+  }
+
+  .ui-avatar[data-shape="square"] {
+    @apply rounded-md;
+  }
+
+  .ui-avatar[data-size="sm"] {
+    @apply size-8 text-xs;
+  }
+
+  .ui-avatar[data-size="md"] {
+    @apply size-10 text-sm;
+  }
+
+  .ui-avatar[data-size="lg"] {
+    @apply size-12 text-base;
+  }
+
+  .ui-avatar[data-size="xl"] {
+    @apply size-16 text-lg;
+  }
+
+  .ui-avatar-image {
+    @apply size-full object-cover;
+  }
+
+  .ui-avatar-fallback {
+    @apply leading-none;
+  }
+}

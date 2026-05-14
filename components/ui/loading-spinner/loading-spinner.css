@@ -1,0 +1,37 @@
+@keyframes ui-spinner-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@layer components {
+  .ui-loading-spinner {
+    @apply inline-flex items-center justify-center text-brand;
+  }
+
+  .ui-loading-spinner-indicator {
+    @apply block rounded-full;
+    animation: ui-spinner-spin 0.75s linear infinite;
+    border-color: currentColor;
+    border-right-color: transparent;
+    will-change: transform;
+  }
+
+  .ui-loading-spinner[data-size="sm"] .ui-loading-spinner-indicator {
+    @apply size-4 border-2;
+  }
+
+  .ui-loading-spinner[data-size="md"] .ui-loading-spinner-indicator {
+    @apply size-5 border-2;
+  }
+
+  .ui-loading-spinner[data-size="lg"] .ui-loading-spinner-indicator {
+    @apply size-6 border-[3px];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-loading-spinner-indicator {
+    animation-duration: 1.5s;
+  }
+}

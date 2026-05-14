@@ -1,11 +1,5 @@
 import { cn } from "../utils";
-import type { LoadingSpinnerProps, LoadingSpinnerSize } from "./types";
-
-const spinnerSizes: Record<LoadingSpinnerSize, string> = {
-  sm: "size-4 border-2",
-  md: "size-5 border-2",
-  lg: "size-6 border-[3px]",
-};
+import type { LoadingSpinnerProps } from "./types";
 
 export function LoadingSpinner({
   className,
@@ -23,15 +17,11 @@ export function LoadingSpinner({
     <span
       ref={ref}
       {...accessibilityProps}
-      className={cn("inline-flex items-center justify-center text-brand", className)}
+      className={cn("ui-loading-spinner", className)}
+      data-size={size}
       {...props}
     >
-      <span
-        className={cn(
-          "ui-spinner block rounded-full",
-          spinnerSizes[size],
-        )}
-      />
+      <span className="ui-loading-spinner-indicator" />
     </span>
   );
 }

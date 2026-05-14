@@ -1,16 +1,5 @@
 import { cn } from "../utils";
-import type { RadioGroupProps, RadioProps, RadioSize, RadioVariant } from "./types";
-
-const radioSizes: Record<RadioSize, string> = {
-  sm: "size-4",
-  md: "size-5",
-  lg: "size-6",
-};
-
-const radioVariants: Record<RadioVariant, string> = {
-  brand: "accent-brand",
-  neutral: "accent-muted-foreground",
-};
+import type { RadioGroupProps, RadioProps } from "./types";
 
 export function Radio({
   className,
@@ -37,12 +26,9 @@ export function Radio({
       disabled={disabled}
       aria-describedby={describedBy}
       data-invalid={invalid || undefined}
-      className={cn(
-        "mt-0.5 shrink-0 rounded-full border border-border bg-input transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 disabled:cursor-not-allowed disabled:opacity-60 data-[invalid=true]:ring-danger/30",
-        radioSizes[size],
-        radioVariants[variant],
-        className,
-      )}
+      className={cn("ui-radio", className)}
+      data-size={size}
+      data-variant={variant}
       {...props}
     />
   );
@@ -52,20 +38,12 @@ export function Radio({
   }
 
   return (
-    <label
-      className={cn(
-        "flex max-w-full items-start gap-3 text-sm text-foreground",
-        disabled ? "cursor-not-allowed opacity-60" : "cursor-pointer",
-      )}
-    >
+    <label className="ui-radio-field" data-disabled={disabled || undefined}>
       {control}
-      <span className="grid gap-1">
-        {label ? <span className="font-medium leading-5">{label}</span> : null}
+      <span className="ui-radio-content">
+        {label ? <span className="ui-radio-label">{label}</span> : null}
         {description ? (
-          <span
-            id={descriptionId}
-            className="text-sm leading-5 text-muted-foreground"
-          >
+          <span id={descriptionId} className="ui-radio-description">
             {description}
           </span>
         ) : null}
@@ -83,19 +61,14 @@ export function RadioGroup({
   ...props
 }: RadioGroupProps) {
   return (
-    <fieldset className={cn("grid gap-3", className)} {...props}>
+    <fieldset className={cn("ui-radio-group", className)} {...props}>
       {label ? (
-        <legend className="text-sm font-semibold text-foreground">{label}</legend>
+        <legend className="ui-radio-group-label">{label}</legend>
       ) : null}
       {description ? (
-        <p className="text-sm leading-5 text-muted-foreground">{description}</p>
+        <p className="ui-radio-group-description">{description}</p>
       ) : null}
-      <div
-        className={cn(
-          "flex gap-4",
-          orientation === "vertical" ? "flex-col" : "flex-row flex-wrap",
-        )}
-      >
+      <div className="ui-radio-group-options" data-orientation={orientation}>
         {children}
       </div>
     </fieldset>

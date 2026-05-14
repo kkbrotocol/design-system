@@ -1,17 +1,5 @@
 import { cn } from "../utils";
-import type { AvatarProps, AvatarShape, AvatarSize } from "./types";
-
-const avatarSizes: Record<AvatarSize, string> = {
-  sm: "size-8 text-xs",
-  md: "size-10 text-sm",
-  lg: "size-12 text-base",
-  xl: "size-16 text-lg",
-};
-
-const avatarShapes: Record<AvatarShape, string> = {
-  circle: "rounded-full",
-  square: "rounded-md",
-};
+import type { AvatarProps } from "./types";
 
 function createFallback(fallback?: string, alt?: string) {
   if (fallback) {
@@ -46,19 +34,18 @@ export function Avatar({
       ref={ref}
       role={fallbackLabel ? "img" : undefined}
       aria-label={fallbackLabel}
-      className={cn(
-        "inline-flex shrink-0 items-center justify-center overflow-hidden bg-muted font-semibold text-muted-foreground ring-1 ring-border",
-        avatarSizes[size],
-        avatarShapes[shape],
-        className,
-      )}
+      className={cn("ui-avatar", className)}
+      data-shape={shape}
+      data-size={size}
       {...props}
     >
       {src ? (
         // eslint-disable-next-line @next/next/no-img-element -- Avatar is a reusable primitive, so it keeps native image semantics.
-        <img className="size-full object-cover" src={src} alt={alt ?? ""} />
+        <img className="ui-avatar-image" src={src} alt={alt ?? ""} />
       ) : (
-        <span aria-hidden={Boolean(fallbackLabel)}>{fallbackText}</span>
+        <span className="ui-avatar-fallback" aria-hidden={Boolean(fallbackLabel)}>
+          {fallbackText}
+        </span>
       )}
     </span>
   );

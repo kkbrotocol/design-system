@@ -1,0 +1,37 @@
+@layer components {
+  .ui-input {
+    @apply w-full rounded-md text-foreground transition placeholder:text-muted-foreground/75 file:mr-3 file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .ui-input[data-invalid="true"] {
+    @apply border-danger ring-danger/25;
+  }
+
+  .ui-input[data-variant="outline"] {
+    @apply border border-border bg-input shadow-sm;
+  }
+
+  .ui-input[data-variant="filled"] {
+    @apply border border-transparent bg-surface-muted;
+  }
+
+  .ui-input[data-variant="ghost"] {
+    @apply border border-transparent bg-transparent;
+  }
+
+  .ui-input[data-variant="ghost"]:not(:disabled):hover {
+    @apply bg-surface-muted;
+  }
+
+  .ui-input[data-size="sm"] {
+    @apply h-9 px-3 text-sm;
+  }
+
+  .ui-input[data-size="md"] {
+    @apply h-10 px-3.5 text-sm;
+  }
+
+  .ui-input[data-size="lg"] {
+    @apply h-12 px-4 text-base;
+  }
+}

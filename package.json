@@ -6,6 +6,7 @@
     "dist"
   ],
   "exports": {
+    "./styles.css": "./dist/styles.css",
     "./avatar": {
       "types": "./dist/avatar/index.d.ts",
       "import": "./dist/avatar.mjs"
