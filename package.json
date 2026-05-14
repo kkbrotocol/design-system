@@ -19,6 +19,10 @@
       "types": "./dist/checkbox/index.d.ts",
       "import": "./dist/checkbox.mjs"
     },
+    "./dialog": {
+      "types": "./dist/dialog/index.d.ts",
+      "import": "./dist/dialog.mjs"
+    },
     "./input": {
       "types": "./dist/input/index.d.ts",
       "import": "./dist/input.mjs"

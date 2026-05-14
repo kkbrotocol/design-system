@@ -1,0 +1,49 @@
+@layer components {
+  .ui-dialog {
+    @apply m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] overflow-hidden rounded-lg border border-border bg-surface p-0 text-foreground shadow-soft outline-none;
+  }
+
+  .ui-dialog::backdrop {
+    @apply bg-black/45;
+  }
+
+  .ui-dialog[data-variant="danger"] {
+    @apply border-danger/35;
+  }
+
+  .ui-dialog[data-size="sm"] {
+    @apply max-w-md;
+  }
+
+  .ui-dialog[data-size="md"] {
+    @apply max-w-lg;
+  }
+
+  .ui-dialog[data-size="lg"] {
+    @apply max-w-2xl;
+  }
+
+  .ui-dialog-header {
+    @apply grid gap-2 border-b border-border px-5 pb-4 pt-5;
+  }
+
+  .ui-dialog-title {
+    @apply pr-9 text-lg font-semibold leading-7 text-foreground;
+  }
+
+  .ui-dialog-description {
+    @apply text-sm leading-6 text-muted-foreground;
+  }
+
+  .ui-dialog-body {
+    @apply max-h-[min(34rem,calc(100dvh-14rem))] overflow-auto px-5 py-4 text-sm leading-6 text-foreground;
+  }
+
+  .ui-dialog-footer {
+    @apply flex flex-col-reverse gap-3 border-t border-border px-5 py-4 sm:flex-row sm:justify-end;
+  }
+
+  .ui-dialog-close {
+    @apply absolute right-3 top-3 inline-flex size-8 cursor-pointer items-center justify-center rounded-md border border-transparent bg-transparent text-xl leading-none text-muted-foreground transition hover:bg-surface-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25;
+  }
+}

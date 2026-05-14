@@ -5,6 +5,7 @@ const uiEntries = {
   avatar: resolve(__dirname, "components/ui/avatar/index.ts"),
   button: resolve(__dirname, "components/ui/button/index.ts"),
   checkbox: resolve(__dirname, "components/ui/checkbox/index.ts"),
+  dialog: resolve(__dirname, "components/ui/dialog/index.ts"),
   input: resolve(__dirname, "components/ui/input/index.ts"),
   "loading-spinner": resolve(
     __dirname,

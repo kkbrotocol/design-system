@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import { Radio, RadioGroup } from "@/components/ui/radio";
 import { Option, Select } from "@/components/ui/select";
+import { DialogExamples } from "./dialog-examples";
 
 const avatarSrc =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23900020'/%3E%3Ccircle cx='60' cy='45' r='24' fill='white' fill-opacity='.9'/%3E%3Cpath d='M24 112c6-24 22-36 36-36s30 12 36 36' fill='white' fill-opacity='.9'/%3E%3C/svg%3E";
@@ -221,6 +222,8 @@ export default function Home() {
             <Avatar alt="Park Minjun" fallback="PM" shape="square" />
           </div>
         </section>
+
+        <DialogExamples />
 
         <section className="dark grid gap-6 rounded-lg border border-border bg-background p-5 text-foreground shadow-soft">
           <SectionTitle eyebrow="Dark mode" title="Token-driven preview" />

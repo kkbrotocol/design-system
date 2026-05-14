@@ -2,6 +2,7 @@
 @import "./avatar/avatar.css";
 @import "./button/button.css";
 @import "./checkbox/checkbox.css";
+@import "./dialog/dialog.css";
 @import "./input/input.css";
 @import "./loading-spinner/loading-spinner.css";
 @import "./radio/radio.css";
