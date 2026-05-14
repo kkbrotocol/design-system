@@ -1,0 +1,71 @@
+{
+  "name": "design-system",
+  "version": "0.1.0",
+  "private": true,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./avatar": {
+      "types": "./dist/avatar/index.d.ts",
+      "import": "./dist/avatar.mjs"
+    },
+    "./button": {
+      "types": "./dist/button/index.d.ts",
+      "import": "./dist/button.mjs"
+    },
+    "./checkbox": {
+      "types": "./dist/checkbox/index.d.ts",
+      "import": "./dist/checkbox.mjs"
+    },
+    "./input": {
+      "types": "./dist/input/index.d.ts",
+      "import": "./dist/input.mjs"
+    },
+    "./loading-spinner": {
+      "types": "./dist/loading-spinner/index.d.ts",
+      "import": "./dist/loading-spinner.mjs"
+    },
+    "./radio": {
+      "types": "./dist/radio/index.d.ts",
+      "import": "./dist/radio.mjs"
+    },
+    "./select": {
+      "types": "./dist/select/index.d.ts",
+      "import": "./dist/select.mjs"
+    }
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run build:ui",
+    "build:app": "next build",
+    "build:ui": "npm run build:ui:js && npm run build:ui:types",
+    "build:ui:js": "vite build",
+    "build:ui:types": "tsc -p tsconfig.ui.json --emitDeclarationOnly",
+    "start": "next start",
+    "lint": "eslint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.3.6",
+    "@storybook/addon-docs": "^10.3.6",
+    "@storybook/nextjs": "^10.3.6",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.6",
+    "eslint-plugin-storybook": "^10.3.6",
+    "storybook": "^10.3.6",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vite": "^8.0.12"
+  }
+}

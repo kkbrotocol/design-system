@@ -1,0 +1,20 @@
+@import "./button/button.css";
+
+@keyframes ui-spinner-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ui-spinner {
+  animation: ui-spinner-spin 0.75s linear infinite;
+  border-color: currentColor;
+  border-right-color: transparent;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-spinner {
+    animation-duration: 1.5s;
+  }
+}

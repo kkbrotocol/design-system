@@ -1,0 +1,45 @@
+@layer components {
+    .ui-button {
+        @apply cursor-pointer inline-flex shrink-0 items-center justify-center gap-2 rounded-md font-medium transition duration-150 focus-visible:outline-none focus-visible:ring-2;
+    }
+
+    .ui-button:disabled {
+        @apply cursor-not-allowed opacity-50;
+    }
+
+    .ui-button[data-variant="primary"] {
+        @apply bg-brand text-brand-foreground shadow-soft hover:bg-brand-hover focus-visible:ring-ring/35;
+    }
+
+    .ui-button[data-variant="secondary"] {
+        @apply border border-border bg-surface text-foreground shadow-sm hover:bg-surface-muted focus-visible:ring-ring/25;
+    }
+
+    .ui-button[data-variant="outline"] {
+        @apply border border-border bg-transparent text-foreground hover:bg-surface-muted focus-visible:ring-ring/25;
+    }
+
+    .ui-button[data-variant="ghost"] {
+        @apply bg-transparent text-foreground hover:bg-surface-muted focus-visible:ring-ring/25;
+    }
+
+    .ui-button[data-variant="danger"] {
+        @apply bg-danger text-danger-foreground shadow-soft hover:brightness-95 focus-visible:ring-danger/35;
+    }
+
+    .ui-button[data-size="sm"] {
+        @apply h-9 px-3 text-sm;
+    }
+
+    .ui-button[data-size="md"] {
+        @apply h-10 px-4 text-sm;
+    }
+
+    .ui-button[data-size="lg"] {
+        @apply h-12 px-5 text-base;
+    }
+
+    .ui-button[data-size="icon"] {
+        @apply size-10 p-0;
+    }
+}
