@@ -1,4 +1,7 @@
-@keyframes ui-spinner-spin {
+@keyframes ui-loading-spinner-spin {
+  from {
+    transform: rotate(0deg);
+  }
   to {
     transform: rotate(360deg);
   }
@@ -6,15 +9,12 @@
 
 @layer components {
   .ui-loading-spinner {
-    @apply inline-flex items-center justify-center text-brand;
+    @apply flex items-center justify-center;
   }
 
   .ui-loading-spinner-indicator {
-    @apply block rounded-full;
-    animation: ui-spinner-spin 0.75s linear infinite;
-    border-color: currentColor;
-    border-right-color: transparent;
-    will-change: transform;
+    @apply block border-current border-r-transparent! rounded-full;
+    animation: 1s ui-loading-spinner-spin 0.5s ease-in-out infinite;
   }
 
   .ui-loading-spinner[data-size="sm"] .ui-loading-spinner-indicator {

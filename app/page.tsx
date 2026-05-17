@@ -211,12 +211,14 @@ export default function Home() {
               <Button disabled variant="outline">Outline</Button>
               <Button disabled variant="ghost">Ghost</Button>
               <Button disabled variant="danger">Danger</Button>
-              <Button disabled isLoading>Saving</Button>
+              <Button isLoading>Saving?</Button>
             </div>
 
           </div>
           <div className="flex flex-wrap items-center gap-4 border-t border-border pt-5">
-            <LoadingSpinner />
+            <LoadingSpinner size="sm" />
+            <LoadingSpinner size="md" />
+            <LoadingSpinner size="lg" />
             <Avatar alt="Kim Bora" />
             <Avatar alt="Kim Bora" size="lg" src={avatarSrc} />
             <Avatar alt="Park Minjun" fallback="PM" shape="square" />

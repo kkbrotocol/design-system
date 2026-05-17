@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Minimal Design System",
+  title: "크크브 디자인 시스템",
   description: "A burgundy-first component system for Next.js.",
 };
 
